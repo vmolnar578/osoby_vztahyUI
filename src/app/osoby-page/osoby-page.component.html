@@ -1,0 +1,12 @@
+<div class="h-[10%] w-full rounded-t-lg bg-[rgba(255,255,255,0.61)]">
+  <ul class="flex justify-around h-full px-16 text-xl items-center">
+    <li class="cursor-pointer" (click)="setMenu('z')">Žiaci</li>
+    <li class="cursor-pointer"(click)="setMenu('u')">Učitelia</li>
+    <li class="cursor-pointer" (click)="setMenu('r')">Rodičia</li>
+  </ul>
+</div>
+<div class=" h-[90%] w-full">
+  <app-ziaci-page *ngIf="getMenu() == 'z'" class="h-full flex flex-col md:flex-row"></app-ziaci-page>
+  <app-ucitelia-page *ngIf="getMenu() == 'u'" class="h-full flex flex-col md:flex-row"></app-ucitelia-page>
+  <app-rodicia-page *ngIf="getMenu() == 'r'" class="h-full flex flex-col md:flex-row"></app-rodicia-page>
+</div>
