@@ -1,6 +1,9 @@
-<div class="text-white bg-[#5b698dcc] md:h-full w-full md:w-80 rounded-bl-lg p-5">
-  <app-ziaci-list [ziaci]="ziaci"></app-ziaci-list>
+<div class="text-white bg-[#5b698dcc] md:h-full w-full md:w-80 rounded-bl-lg flex flex-col justify-between">
+  <app-ziaci-list class="m-5" [ziaci]="ziaci" (editStudent)="editStudentFromList($event)" (deleteStudent)="deleteStudentFromList($event)"></app-ziaci-list>
+  <div class="flex justify-around text-2xl items-center bg-[#b7bbc573] w-full h-16">
+    <button><i class="fas fa-plus"></i> Pridať</button>
+  </div>
 </div>
 <div class="p-5">
-  detail ziaka
+  <app-ziaci-form [ziak]="studentEditing" (studentEmitter)="pushStudent($event)" (editStudentEmitter)="updateStudent($event)"></app-ziaci-form>
 </div>

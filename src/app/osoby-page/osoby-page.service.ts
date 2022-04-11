@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {Rodic} from "../models/rodic.model";
-import {Ziak} from "../models/ziak.model";
-import {Ucitel} from "../models/ucitel.model";
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Rodic } from '../models/rodic.model';
+import { Ziak } from '../models/ziak.model';
+import { Ucitel } from '../models/ucitel.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class OsobyService {
   private parentsApiUrl = 'http://localhost:8080/api/parents';
   private studentsApiUrl = 'http://localhost:8080/api/students';
   private teachersApiUrl = 'http://localhost:8080/api/teachers';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // ------ API parents -----
-  public createParent(o: Rodic): Observable<Rodic> { return this.http.post<Rodic>(`${this.parentsApiUrl}`, o); }
+  public createParent(o: Rodic): Observable<Rodic> {
+    return this.http.post<Rodic>(`${this.parentsApiUrl}`, o);
+  }
 
-  public getParents(): Observable<Rodic[]> { return this.http.get<Rodic[]>(`${this.parentsApiUrl}`); }
+  public getParents(): Observable<Rodic[]> {
+    return this.http.get<Rodic[]>(`${this.parentsApiUrl}`);
+  }
 
   public getParentById(parentId: number): Observable<Rodic> {
     return this.http.get<Rodic>(`${this.parentsApiUrl}/${parentId}`);
@@ -34,9 +37,13 @@ export class OsobyService {
   }
 
   // ------ API students -----
-  public createStudent(o: Ziak): Observable<Ziak> { return this.http.post<Ziak>(`${this.studentsApiUrl}`, o); }
+  public createStudent(o: Ziak): Observable<Ziak> {
+    return this.http.post<Ziak>(`${this.studentsApiUrl}`, o);
+  }
 
-  public getStudents(): Observable<Ziak[]> { return this.http.get<Ziak[]>(`${this.studentsApiUrl}`); }
+  public getStudents(): Observable<Ziak[]> {
+    return this.http.get<Ziak[]>(`${this.studentsApiUrl}`);
+  }
 
   public getStudentById(studentId: number): Observable<Ziak> {
     return this.http.get<Ziak>(`${this.studentsApiUrl}/${studentId}`);
@@ -51,9 +58,13 @@ export class OsobyService {
   }
 
   // ------ API teachers -----
-  public createTeacher(o: Ucitel): Observable<Ucitel> { return this.http.post<Ucitel>(`${this.teachersApiUrl}`, o); }
+  public createTeacher(o: Ucitel): Observable<Ucitel> {
+    return this.http.post<Ucitel>(`${this.teachersApiUrl}`, o);
+  }
 
-  public getTeachers(): Observable<Ucitel[]> { return this.http.get<Ucitel[]>(`${this.teachersApiUrl}`); }
+  public getTeachers(): Observable<Ucitel[]> {
+    return this.http.get<Ucitel[]>(`${this.teachersApiUrl}`);
+  }
 
   public getTeacherById(teacherId: number): Observable<Ucitel> {
     return this.http.get<Ucitel>(`${this.teachersApiUrl}/${teacherId}`);

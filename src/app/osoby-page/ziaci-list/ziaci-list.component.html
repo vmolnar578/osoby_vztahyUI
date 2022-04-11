@@ -1,4 +1,7 @@
-Zoznam ziakov:
-<div class="list" *ngFor="let z of ziaci">
-  {{z.firstname}} {{z.lastname}}
+<div class="list text-2xl font-thin flex gap-3" *ngFor="let z of ziaci">
+  {{ z.firstName }} {{ z.lastName }}
+  <div class="flex gap-3">
+    <button (click)="edit(z)"><i class="text-sm fas fa-pencil-alt"></i></button>
+    <button (click)="delete(z)"><i class="text-sm fas fa-minus"></i></button>
+  </div>
 </div>

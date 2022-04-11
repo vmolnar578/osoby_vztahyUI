@@ -1,9 +1,17 @@
-export class Ziak{
-  firstname:string;
-  lastname:string;
+export class Ziak {
+  id: number;
+  grade: number;
+  firstName: string;
+  lastName: string;
+  gender: string;
+  dateOfBirth: string;
 
   constructor(ziak: Ziak) {
-    this.firstname = ziak.firstname;
-    this.lastname = ziak.lastname;
+    this.id = ziak.id;
+    this.firstName = ziak.firstName;
+    this.lastName = ziak.lastName;
+    this.dateOfBirth = ziak.dateOfBirth;
+    this.gender = ziak.gender;
+    this.grade = ziak.grade;
   }
 }
