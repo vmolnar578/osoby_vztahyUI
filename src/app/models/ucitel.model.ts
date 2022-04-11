@@ -1,9 +1,9 @@
 export class Ucitel{
-  firstname:string;
-  lastname:string;
+  firstName:string;
+  lastName:string;
 
   constructor(ucitel: Ucitel) {
-    this.firstname = ucitel.firstname;
-    this.lastname = ucitel.lastname;
+    this.firstName = ucitel.firstName;
+    this.lastName = ucitel.lastName;
   }
 }
