@@ -14,6 +14,12 @@ import { UciteliaListComponent } from './osoby-page/ucitelia-list/ucitelia-list.
 import { RodiciaListComponent } from './osoby-page/rodicia-list/rodicia-list.component';
 import { RodiciaPageComponent } from './osoby-page/rodicia-page/rodicia-page.component';
 import { ZiaciFormComponent } from './osoby-page/ziaci-form/ziaci-form.component';
+import { RodiciaFormComponent } from './osoby-page/rodicia-form/rodicia-form.component';
+import { UciteliaFormComponent } from './osoby-page/ucitelia-form/ucitelia-form.component';
+import { ZiaciDetailsComponent } from './osoby-page/ziaci-details/ziaci-details.component';
+import { RodiciaDetailsComponent } from './osoby-page/rodicia-details/rodicia-details.component';
+import { UciteliaDetailsComponent } from './osoby-page/ucitelia-details/ucitelia-details.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +34,12 @@ import { ZiaciFormComponent } from './osoby-page/ziaci-form/ziaci-form.component
     RodiciaListComponent,
     RodiciaPageComponent,
     ZiaciFormComponent,
+    RodiciaFormComponent,
+    UciteliaFormComponent,
+    ZiaciDetailsComponent,
+    RodiciaDetailsComponent,
+    UciteliaDetailsComponent,
+    LoginPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
   providers: [],

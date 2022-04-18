@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form class="flex flex-col text-xl" [formGroup]="studentForm">
   Firstname: <input type="text" formControlName="firstName" /><br />
   Lastname: <input type="text" formControlName="lastName" /><br />
@@ -6,4 +7,23 @@
   Date of Birth: <input type="date" formControlName="dateOfBirth" /><br />
   <button (click)="addStudent()">Add student</button>
   <button (click)="editStudent()">Edit student</button>
+=======
+<form class="flex flex-col h-full justify-around text-xl" [formGroup]="studentForm">
+  <div class="flex gap-10">
+    <div class="flex flex-col">
+      Meno: <input class="p-3 rounded-md mt-4" type="text" formControlName="firstName" /><br />
+      Priezvisko: <input class="p-3 rounded-md mt-4" type="text" formControlName="lastName" /><br />
+      Pohlavie: <input class="p-3 rounded-md mt-4" type="text" formControlName="gender" /><br />
+    </div>
+    <div class="flex flex-col">
+      Ročník: <input class="p-3 rounded-md mt-4" type="text" formControlName="grade" /><br />
+      Dátum narodenia: <input class="p-3 rounded-md mt-4" type="date" formControlName="dateOfBirth" /><br />
+      ID obeda: <input class="p-3 rounded-md mt-4" type="text" formControlName="lunchId" /><br />
+    </div>
+  </div>
+  <span class="flex gap-10 justify-center text-white">
+    <button class="bg-slate-500 shadow-[#ffffff1e] shadow-lg p-3 rounded-md" (click)="addStudent()">Pridať žiaka</button>
+    <button class="bg-slate-500 shadow-[#ffffff1e] shadow-lg p-3 rounded-md" (click)="editStudent()">Upraviť žiaka</button>
+  </span>
+>>>>>>> c8e842d27421e0cac90472740f1e6b2212798059
 </form>

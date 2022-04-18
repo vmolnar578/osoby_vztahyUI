@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Ziak } from 'src/app/models/ziak.model';
+import { Student } from 'src/app/models/student.model';
 import { OsobyService } from '../osoby-page.service';
 
 @Component({
@@ -10,30 +10,35 @@ import { OsobyService } from '../osoby-page.service';
 })
 export class ZiaciListComponent implements OnInit {
   @Input()
-  ziaci: Ziak[] = [];
+  students: Student[] = [];
   private sub: Subscription = new Subscription();
 
   constructor(private osobySrv: OsobyService) {}
   @Output()
-  editStudent: EventEmitter<Ziak> = new EventEmitter<Ziak>();
+  editStudent: EventEmitter<Student> = new EventEmitter<Student>();
   @Output()
-  deleteStudent: EventEmitter<Ziak> = new EventEmitter<Ziak>();
-  refreshOsoby(): void {
+  showStudent: EventEmitter<Student> = new EventEmitter<Student>();
+  @Output()
+  deleteStudent: EventEmitter<Student> = new EventEmitter<Student>();
+  refreshStudents(): void {
     this.sub.add(
-      this.osobySrv.getStudents().subscribe((data: Ziak[]) => {
-        this.ziaci = data;
+      this.osobySrv.getStudents().subscribe((data: Student[]) => {
+        this.students = data;
         console.log(data);
       })
     );
   }
-  edit(ziak: Ziak): void {
-    this.editStudent.emit(ziak);
+  show(student: Student): void {
+    this.showStudent.emit(student);
+  }
+  edit(student: Student): void {
+    this.editStudent.emit(student);
   }
 
-  delete(ziak: Ziak): void {
-    this.deleteStudent.emit(ziak);
+  delete(student: Student): void {
+    this.deleteStudent.emit(student);
   }
   ngOnInit(): void {
-    this.refreshOsoby();
+    this.refreshStudents();
   }
 }
