@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Teacher } from 'src/app/models/teacher.model';
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-ucitelia-form',
@@ -23,6 +24,7 @@ export class UciteliaFormComponent implements OnInit {
   @Input()
   set teacher(t: Teacher | undefined) {
     if (t) {
+      t.dateOfBirth = formatDate(t.dateOfBirth, 'yyyy-MM-dd', 'en-US');
       this.teacherForm.setValue(t);
     }
   }

@@ -4,7 +4,7 @@ export class Student {
   firstName: string;
   lastName: string;
   gender: string;
-  dateOfBirth: Date;
+  dateOfBirth: string;
   lunchId: number;
 
   constructor(student: Student) {

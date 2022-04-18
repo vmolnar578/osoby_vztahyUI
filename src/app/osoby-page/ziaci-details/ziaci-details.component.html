@@ -16,7 +16,7 @@
             <span class="text-[#000000b7] italic">Trieda:</span> <span class="text-2xl ml-1"> {{ person?.grade }}</span>
           </div>
           <div>
-            <span class="text-[#000000b7] italic">Dátum narodenia:</span> <span class="text-2xl ml-1"> {{ person?.dateOfBirth }}</span>
+            <span class="text-[#000000b7] italic">Dátum narodenia:</span> <span class="text-2xl ml-1"> {{ person?.dateOfBirth | date:'dd.MM.yyyy' }}</span>
           </div>
           <div>
             <span class="text-[#000000b7] italic">ID obeda:</span> <span class="text-2xl ml-1"> {{ person?.lunchId }}</span>
