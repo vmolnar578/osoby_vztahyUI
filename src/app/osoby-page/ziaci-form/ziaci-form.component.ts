@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Ziak } from 'src/app/models/ziak.model';
+import { Student } from 'src/app/models/student.model';
 
 @Component({
   selector: 'app-ziaci-form',
@@ -17,17 +17,18 @@ export class ZiaciFormComponent implements OnInit {
       gender: new FormControl(null),
       grade: new FormControl(null),
       dateOfBirth: new FormControl(null),
+      lunchId: new FormControl(null),
     });
   }
   @Input()
-  set ziak(z: Ziak | undefined) {
-    if (z) {
-      this.studentForm.setValue(z);
+  set student(s: Student | undefined) {
+    if (s) {
+      this.studentForm.setValue(s);
     }
   }
-  @Output() studentEmitter = new EventEmitter<Ziak>();
+  @Output() studentEmitter = new EventEmitter<Student>();
   ngOnInit(): void {}
-  @Output() editStudentEmitter = new EventEmitter<Ziak>();
+  @Output() editStudentEmitter = new EventEmitter<Student>();
   public addStudent() {
     this.studentEmitter.emit({
       id: this.studentForm.value.id,
@@ -36,6 +37,7 @@ export class ZiaciFormComponent implements OnInit {
       gender: this.studentForm.value.gender,
       grade: this.studentForm.value.grade,
       dateOfBirth: this.studentForm.value.dateOfBirth,
+      lunchId: this.studentForm.value.lunchId,
     });
     this.studentForm.reset();
   }

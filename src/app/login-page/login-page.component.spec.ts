@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RodiciaListComponent } from './rodicia-list.component';
+import { LoginPageComponent } from './login-page.component';
 
-describe('RodiciaListComponent', () => {
-  let component: RodiciaListComponent;
-  let fixture: ComponentFixture<RodiciaListComponent>;
+describe('LoginPageComponent', () => {
+  let component: LoginPageComponent;
+  let fixture: ComponentFixture<LoginPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RodiciaListComponent ]
+      declarations: [ LoginPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RodiciaListComponent);
+    fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

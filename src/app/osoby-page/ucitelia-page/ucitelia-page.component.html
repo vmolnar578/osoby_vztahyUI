@@ -1,6 +1,22 @@
-<div class="text-white bg-[#5b698dcc] md:h-full w-full md:w-80 rounded-bl-lg p-5">
-  <app-ucitelia-list [ucitelia]="ucitelia"></app-ucitelia-list>
+<div class="text-white bg-[#5b698dcc] md:h-full w-full md:w-[25%] rounded-bl-lg flex flex-col justify-between">
+  <app-ucitelia-list
+    class="m-5"
+    [teachers]="teachers"
+    (showTeacher)="showTeacherFromList($event)"
+    (editTeacher)="editTeacherFromList($event)"
+    (deleteTeacher)="deleteTeacherFromList($event)"
+  ></app-ucitelia-list>
+  <div class="flex justify-around text-2xl items-center bg-[#b7bbc573] rounded-bl-lg w-full h-16">
+    <button id="add" (click)="toggleForm()"><i class="fas fa-plus"></i> Pridať</button>
+  </div>
 </div>
-<div class="p-5">
-  detail ucitela
+<div class="relative md:w-[75%] w-full h-full">
+  <div id="form" class="absolute z-50 hidden justify-around items-center bg-[#8d94aa] w-full h-full backdrop-blur-3xl">
+    <div class="w-fit h-full">
+      <app-ucitelia-form [teacher]="teacherEditing" (teacherEmitter)="pushTeacher($event)" (editTeacherEmitter)="updateTeacher($event)"></app-ucitelia-form>
+    </div>
+  </div>
+  <div class="h-full w-full">
+    <app-ucitelia-details [teacher]="teacherShowing"></app-ucitelia-details>
+  </div>
 </div>
