@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Rodic } from '../models/rodic.model';
-import { Ziak } from '../models/ziak.model';
-import { Ucitel } from '../models/ucitel.model';
+import { Parent } from '../models/parent.model';
+import { Student } from '../models/student.model';
+import { Teacher } from '../models/teacher.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,20 +16,20 @@ export class OsobyService {
   constructor(private http: HttpClient) {}
 
   // ------ API parents -----
-  public createParent(o: Rodic): Observable<Rodic> {
-    return this.http.post<Rodic>(`${this.parentsApiUrl}`, o);
+  public createParent(o: Parent): Observable<Parent> {
+    return this.http.post<Parent>(`${this.parentsApiUrl}`, o);
   }
 
-  public getParents(): Observable<Rodic[]> {
-    return this.http.get<Rodic[]>(`${this.parentsApiUrl}`);
+  public getParents(): Observable<Parent[]> {
+    return this.http.get<Parent[]>(`${this.parentsApiUrl}`);
   }
 
-  public getParentById(parentId: number): Observable<Rodic> {
-    return this.http.get<Rodic>(`${this.parentsApiUrl}/${parentId}`);
+  public getParentById(parentId: number): Observable<Parent> {
+    return this.http.get<Parent>(`${this.parentsApiUrl}/${parentId}`);
   }
 
-  public updateParent(parentId: number, o: Rodic): Observable<Rodic> {
-    return this.http.put<Rodic>(`${this.parentsApiUrl}/${parentId}`, o);
+  public updateParent(parentId: number, o: Parent): Observable<Parent> {
+    return this.http.put<Parent>(`${this.parentsApiUrl}/${parentId}`, o);
   }
 
   public deleteParent(parentId: number): Observable<void> {
@@ -37,20 +37,20 @@ export class OsobyService {
   }
 
   // ------ API students -----
-  public createStudent(o: Ziak): Observable<Ziak> {
-    return this.http.post<Ziak>(`${this.studentsApiUrl}`, o);
+  public createStudent(o: Student): Observable<Student> {
+    return this.http.post<Student>(`${this.studentsApiUrl}`, o);
   }
 
-  public getStudents(): Observable<Ziak[]> {
-    return this.http.get<Ziak[]>(`${this.studentsApiUrl}`);
+  public getStudents(): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.studentsApiUrl}`);
   }
 
-  public getStudentById(studentId: number): Observable<Ziak> {
-    return this.http.get<Ziak>(`${this.studentsApiUrl}/${studentId}`);
+  public getStudentById(studentId: number): Observable<Student> {
+    return this.http.get<Student>(`${this.studentsApiUrl}/${studentId}`);
   }
 
-  public updateStudent(studentId: number, o: Ziak): Observable<Ziak> {
-    return this.http.put<Ziak>(`${this.studentsApiUrl}/${studentId}`, o);
+  public updateStudent(studentId: number, o: Student): Observable<Student> {
+    return this.http.put<Student>(`${this.studentsApiUrl}/${studentId}`, o);
   }
 
   public deleteStudent(studentId: number): Observable<void> {
@@ -58,20 +58,20 @@ export class OsobyService {
   }
 
   // ------ API teachers -----
-  public createTeacher(o: Ucitel): Observable<Ucitel> {
-    return this.http.post<Ucitel>(`${this.teachersApiUrl}`, o);
+  public createTeacher(o: Teacher): Observable<Teacher> {
+    return this.http.post<Teacher>(`${this.teachersApiUrl}`, o);
   }
 
-  public getTeachers(): Observable<Ucitel[]> {
-    return this.http.get<Ucitel[]>(`${this.teachersApiUrl}`);
+  public getTeachers(): Observable<Teacher[]> {
+    return this.http.get<Teacher[]>(`${this.teachersApiUrl}`);
   }
 
-  public getTeacherById(teacherId: number): Observable<Ucitel> {
-    return this.http.get<Ucitel>(`${this.teachersApiUrl}/${teacherId}`);
+  public getTeacherById(teacherId: number): Observable<Teacher> {
+    return this.http.get<Teacher>(`${this.teachersApiUrl}/${teacherId}`);
   }
 
-  public updateTeacher(teacherId: number, o: Ucitel): Observable<Ucitel> {
-    return this.http.put<Ucitel>(`${this.teachersApiUrl}/${teacherId}`, o);
+  public updateTeacher(teacherId: number, o: Teacher): Observable<Teacher> {
+    return this.http.put<Teacher>(`${this.teachersApiUrl}/${teacherId}`, o);
   }
 
   public deleteTeacher(teacherId: number): Observable<void> {

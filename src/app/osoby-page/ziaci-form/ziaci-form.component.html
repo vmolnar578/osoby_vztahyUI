@@ -1,9 +1,9 @@
-<form class="flex flex-col gap-4 text-xl" [formGroup]="studentForm">
+<form class="flex flex-col text-xl" [formGroup]="studentForm">
   Firstname: <input type="text" formControlName="firstName" /><br />
   Lastname: <input type="text" formControlName="lastName" /><br />
   Gender: <input type="text" formControlName="gender" /><br />
   Grade: <input type="text" formControlName="grade" /><br />
-  Date of Birth: <input type="text" formControlName="dateOfBirth" /><br />
+  Date of Birth: <input type="date" formControlName="dateOfBirth" /><br />
   <button (click)="addStudent()">Add student</button>
   <button (click)="editStudent()">Edit student</button>
 </form>

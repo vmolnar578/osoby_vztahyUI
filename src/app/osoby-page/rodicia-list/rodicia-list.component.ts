@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Rodic } from '../../models/rodic.model';
+import { Parent } from 'src/app/models/parent.model';
 import { OsobyService } from '../osoby-page.service';
 
 @Component({
@@ -10,21 +10,35 @@ import { OsobyService } from '../osoby-page.service';
 })
 export class RodiciaListComponent implements OnInit {
   @Input()
-  rodicia: Rodic[] = [];
+  parents: Parent[] = [];
   private sub: Subscription = new Subscription();
 
   constructor(private osobySrv: OsobyService) {}
-
-  refreshOsoby(): void {
+  @Output()
+  editParent: EventEmitter<Parent> = new EventEmitter<Parent>();
+  @Output()
+  showParent: EventEmitter<Parent> = new EventEmitter<Parent>();
+  @Output()
+  deleteParent: EventEmitter<Parent> = new EventEmitter<Parent>();
+  refreshParents(): void {
     this.sub.add(
-      this.osobySrv.getParents().subscribe((data: Rodic[]) => {
-        this.rodicia = data;
+      this.osobySrv.getParents().subscribe((data: Parent[]) => {
+        this.parents = data;
         console.log(data);
       })
     );
   }
+  show(parent: Parent): void {
+    this.showParent.emit(parent);
+  }
+  edit(parent: Parent): void {
+    this.editParent.emit(parent);
+  }
 
+  delete(parent: Parent): void {
+    this.deleteParent.emit(parent);
+  }
   ngOnInit(): void {
-    this.refreshOsoby();
+    this.refreshParents();
   }
 }
