@@ -1,23 +1,14 @@
-<div
-  class="bg-[rgba(73,101,143,0.88)] backdrop-blur-sm h-28 md:h-20 flex justify-center rounded-b-xl"
->
-  <div
-    class="container flex justify-between px-5 items-center h-full text-white"
-  >
+<div class="bg-[rgba(73,101,143,0.88)] backdrop-blur-sm h-28 md:h-20 flex justify-center rounded-b-xl">
+  <div class="container flex justify-between px-5 items-center h-full text-white">
     <div id="logo" class="text-xl flex gap-5 mr-4">
       <i class="fas fa-book text-3xl"> </i>
       <h1>Evidencia vzťahov a osôb - Základná škola</h1>
     </div>
     <ul class="flex gap-5 md:gap-14 text-lg cursor-pointer">
-      <li (click)="selectMenu(menu.OSOBY)">
-        <i class="fas fa-user"></i> Osoby
-      </li>
-      <li (click)="selectMenu(menu.PREDMETY)">
-        <i class="fas fa-book-open"></i> Predmety
-      </li>
-      <li (click)="selectMenu(menu.OBEDY)">
-        <i class="fas fa-utensils"></i> Obedy
-      </li>
+      <li (click)="selectMenu(menu.OSOBY)"><i class="fas fa-user"></i> Osoby</li>
+      <li (click)="selectMenu(menu.PREDMETY)"><i class="fas fa-book-open"></i> Predmety</li>
+      <li (click)="selectMenu(menu.OBEDY)"><i class="fas fa-utensils"></i> Obedy</li>
+      <li (click)="selectMenu(menu.LOGIN)"><i class="fas fa-sign-in-alt"></i> Prihlásiť sa</li>
     </ul>
   </div>
 </div>
@@ -26,8 +17,6 @@
     <router-outlet></router-outlet>
   </div>
 </main>
-<footer
-  class="absolute bottom-0 w-full backdrop-blur-sm bg-[rgba(73,101,143,0.88)] rounded-t-xl h-16 mt-16 flex items-center justify-center"
->
-  <h2 class="text-white text-lg">R&M team</h2>
+<footer class="absolute bottom-0 w-full backdrop-blur-sm bg-[rgba(73,101,143,0.88)] rounded-t-xl h-16 mt-16 flex items-center justify-center">
+  <h2 class="text-white text-lg">P&M team</h2>
 </footer>

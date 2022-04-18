@@ -4,6 +4,7 @@ enum MENU {
   OSOBY,
   PREDMETY,
   OBEDY,
+  LOGIN,
 }
 
 @Component({
@@ -27,6 +28,9 @@ export class AppComponent {
     }
     if (m == MENU.OBEDY) {
       this.router.navigate(['/obedy']);
+    }
+    if (m == MENU.LOGIN) {
+      this.router.navigate(['/login']);
     }
   }
 }

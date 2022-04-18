@@ -1,4 +1,7 @@
-Zoznam rodicov:
-<div class="list" *ngFor="let r of rodicia">
-  {{r.firstname}} {{r.lastname}}
+<div class="list text-2xl font-thin flex gap-3 cursor-pointer" *ngFor="let p of parents" (click)="show(p)">
+  {{ p.firstName }} {{ p.lastName }}
+  <div class="flex gap-3">
+    <button (click)="edit(p)"><i class="text-sm fas fa-pencil-alt"></i></button>
+    <button (click)="delete(p)"><i class="text-sm fas fa-minus"></i></button>
+  </div>
 </div>
