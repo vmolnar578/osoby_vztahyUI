@@ -1,0 +1,12 @@
+<form class="flex flex-col h-full justify-around text-xl text-white" [formGroup]="lunchForm">
+  <div class="flex gap-10">
+    <div class="flex flex-col">
+      ID: <input class="p-3 rounded-md mt-4 text-black" type="text" formControlName="id" /><br />
+      Jedlo: <textarea class="p-3 rounded-md mt-4 text-black" rows="5" formControlName="mainMeal"></textarea><br />
+      URL obrázka: <input class="p-3 rounded-md mt-4 text-black" type="text" formControlName="image" /><br />
+    </div>
+  </div>
+  <span class="flex gap-10 justify-center text-white">
+    <button class="bg-slate-300 text-gray-800 shadow-[#ffffff1e] shadow-lg p-3 rounded-md" (click)="editLunch()">Upraviť jedlo</button>
+  </span>
+</form>
