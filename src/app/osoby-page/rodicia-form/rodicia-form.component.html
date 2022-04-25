@@ -1,13 +1,13 @@
 <form class="flex flex-col h-full justify-around text-xl" [formGroup]="parentForm">
-  <div class="flex gap-10">
+  <div class="flex flex-col md:flex-row gap-0 md:gap-10">
     <div class="flex flex-col">
-      Meno: <input class="p-3 rounded-md mt-4" type="text" formControlName="firstName" /><br />
-      Priezvisko: <input class="p-3 rounded-md mt-4" type="text" formControlName="lastName" /><br />
-      Pohlavie: <input class="p-3 rounded-md mt-4" type="text" formControlName="gender" /><br />
+      Meno: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="firstName" /><br />
+      Priezvisko: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="lastName" /><br />
+      Pohlavie: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="gender" /><br />
     </div>
     <div class="flex flex-col">
-      Tel. číslo: <input class="p-3 rounded-md mt-4" type="text" formControlName="phoneNumber" /><br />
-      Dátum narodenia: <input class="p-3 rounded-md mt-4" type="date" formControlName="dateOfBirth" /><br />
+      Tel. číslo: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="phoneNumber" /><br />
+      Dátum narodenia: <input class="md:p-3 rounded-md mt-4" type="date" formControlName="dateOfBirth" /><br />
     </div>
   </div>
   <span class="flex gap-10 justify-center text-white">
