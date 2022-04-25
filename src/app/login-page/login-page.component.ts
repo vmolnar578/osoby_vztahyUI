@@ -12,4 +12,7 @@ export class LoginPageComponent implements OnInit {
   login(): void {
     //TODO
   }
+  register(): void {
+    //TODO
+  }
 }

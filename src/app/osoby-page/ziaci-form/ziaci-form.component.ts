@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Student } from 'src/app/models/student.model';
+import { formatDate } from '@angular/common'
 
 @Component({
   selector: 'app-ziaci-form',
@@ -23,6 +24,7 @@ export class ZiaciFormComponent implements OnInit {
   @Input()
   set student(s: Student | undefined) {
     if (s) {
+      s.dateOfBirth = formatDate(s.dateOfBirth, 'yyyy-MM-dd', 'en-US');
       this.studentForm.setValue(s);
     }
   }

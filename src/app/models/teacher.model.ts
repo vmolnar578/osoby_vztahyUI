@@ -2,9 +2,9 @@ export class Teacher {
   firstName: string;
   lastName: string;
   id: number;
-  dateOfBirth: Date;
+  dateOfBirth: string;
   gender: string;
-  phoneNumber: number;
+  phoneNumber: string;
   lunchId: number;
 
   constructor(teacher: Teacher) {

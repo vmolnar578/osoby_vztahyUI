@@ -1,7 +1,7 @@
 <div *ngIf="person !== undefined">
   <div class="flex justify-between">
-    <div class="ml-10 mt-10 flex gap-4 flex-col justify-between w-full">
-      <div class="flex w-full justify-between">
+    <div class="ml-10 mt-10 mb-10 lg:mb-3 flex gap-4 flex-col justify-between w-full">
+      <div class="flex gap-10 flex-col sm:flex-row md:gap-0 w-full justify-between">
         <div class="flex flex-col gap-4">
           <div>
             <h2 class="text-2xl text-[#41568bcc] font-bold">Osobné udaje</h2>
@@ -16,21 +16,21 @@
             <span class="text-[#000000b7] italic">Trieda:</span> <span class="text-2xl ml-1"> {{ person?.grade }}</span>
           </div>
           <div>
-            <span class="text-[#000000b7] italic">Dátum narodenia:</span> <span class="text-2xl ml-1"> {{ person?.dateOfBirth }}</span>
+            <span class="text-[#000000b7] italic">Dátum narodenia:</span> <span class="text-2xl ml-1"> {{ person?.dateOfBirth | date: 'dd.MM.yyyy' }}</span>
           </div>
           <div>
             <span class="text-[#000000b7] italic">ID obeda:</span> <span class="text-2xl ml-1"> {{ person?.lunchId }}</span>
           </div>
         </div>
-        <div class="mr-20">
+        <div class="mr-20 mt-0 sm:mt-10 md:mt-0">
           <img
-            class="rounded-3xl w-72"
+            class="rounded-3xl md:w-72"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwbGozsS9QP10p16rZiCrQD0koXVkI4c7LwUHab9dkmFRcN0VqCkB37f2y0EnySItwykg&usqp=CAU"
             alt=""
           />
         </div>
       </div>
-      <div class="flex w-full gap-80">
+      <div class="flex flex-col sm:flex-row w-full sm:gap-40 md:gap-80">
         <div>
           <div class="flex gap-4 flex-col mt-7">
             <h2 class="text-2xl text-[#41568bcc] font-bold">Rodičia</h2>
@@ -45,7 +45,7 @@
             </div>
           </div>
         </div>
-        <div>
+        <div class="mr-4">
           <div class="flex gap-4 flex-col mt-7">
             <h2 class="text-2xl text-[#41568bcc] font-bold">Obedy</h2>
             <div>
@@ -63,4 +63,4 @@
     </div>
   </div>
 </div>
-<div class="flex justify-center items-center h-full text-2xl text-[#000000b7]" *ngIf="person === undefined">Kliknite na študenta pre zobrazenie informácií</div>
+<div class="flex justify-center text-center items-center h-full text-2xl text-[#000000b7]" *ngIf="person === undefined">Kliknite na študenta pre zobrazenie informácií</div>

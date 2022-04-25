@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Parent } from 'src/app/models/parent.model';
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-rodicia-form',
@@ -22,6 +23,7 @@ export class RodiciaFormComponent implements OnInit {
   @Input()
   set parent(p: Parent | undefined) {
     if (p) {
+      p.dateOfBirth = formatDate(p.dateOfBirth, 'yyyy-MM-dd', 'en-US');
       this.parentForm.setValue(p);
     }
   }

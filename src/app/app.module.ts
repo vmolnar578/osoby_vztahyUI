@@ -20,6 +20,10 @@ import { ZiaciDetailsComponent } from './osoby-page/ziaci-details/ziaci-details.
 import { RodiciaDetailsComponent } from './osoby-page/rodicia-details/rodicia-details.component';
 import { UciteliaDetailsComponent } from './osoby-page/ucitelia-details/ucitelia-details.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { ObedyListComponent } from './obedy-page/obedy-list/obedy-list.component';
+import { ObedyFormComponent } from './obedy-page/obedy-form/obedy-form.component';
+import { PredmetyListComponent } from './predmety-page/predmety-list/predmety-list.component';
+import { PredmetyFormComponent } from './predmety-page/predmety-form/predmety-form.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { LoginPageComponent } from './login-page/login-page.component';
     RodiciaDetailsComponent,
     UciteliaDetailsComponent,
     LoginPageComponent,
+    ObedyListComponent,
+    ObedyFormComponent,
+    PredmetyListComponent,
+    PredmetyFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
   providers: [],

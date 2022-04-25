@@ -2,9 +2,9 @@ export class Parent {
   firstName: string;
   lastName: string;
   id: number;
-  dateOfBirth: Date;
+  dateOfBirth: string;
   gender: string;
-  phoneNumber: number;
+  phoneNumber: string;
 
   constructor(parent: Parent) {
     this.firstName = parent.firstName;

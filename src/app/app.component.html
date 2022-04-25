@@ -1,8 +1,9 @@
-<div class="bg-[rgba(73,101,143,0.88)] backdrop-blur-sm h-28 md:h-20 flex justify-center rounded-b-xl">
-  <div class="container flex justify-between px-5 items-center h-full text-white">
+<div class="bg-[rgba(73,101,143,0.88)] backdrop-blur-sm h-[10vh] md:h-20 flex justify-center rounded-b-xl">
+  <div class="container flex flex-col justify-around lg:flex-row lg:justify-between px-5 items-center h-full text-white">
     <div id="logo" class="text-xl flex gap-5 mr-4">
       <i class="fas fa-book text-3xl"> </i>
-      <h1>Evidencia vzťahov a osôb - Základná škola</h1>
+      <h1 class="block lg:hidden">Evidencia vzťahov</h1>
+      <h1 class="hidden lg:block">Evidencia vzťahov a osôb - Základná škola</h1>
     </div>
     <ul class="flex gap-5 md:gap-14 text-lg cursor-pointer">
       <li (click)="selectMenu(menu.OSOBY)"><i class="fas fa-user"></i> Osoby</li>
@@ -13,10 +14,10 @@
   </div>
 </div>
 <main class="h-[80vh] my-4 flex justify-center align-center">
-  <div class="bg-[#ffffff8e] backdrop-blur-lg rounded-lg container">
-    <router-outlet></router-outlet>
+  <div class="bg-[#ffffff8e] backdrop-blur-lg h-full rounded-lg container overflow-y-auto">
+    <router-outlet class="h-full"></router-outlet>
   </div>
 </main>
-<footer class="absolute bottom-0 w-full backdrop-blur-sm bg-[rgba(73,101,143,0.88)] rounded-t-xl h-16 mt-16 flex items-center justify-center">
+<footer class="absolute bottom-0 w-full backdrop-blur-sm bg-[rgba(73,101,143,0.88)] rounded-t-xl h-[7vh] md:h-[8vh] mt-16 flex items-center justify-center">
   <h2 class="text-white text-lg">P&M team</h2>
 </footer>
