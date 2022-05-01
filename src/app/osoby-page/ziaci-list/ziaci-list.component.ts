@@ -24,7 +24,6 @@ export class ZiaciListComponent implements OnInit {
     this.sub.add(
       this.osobySrv.getStudents().subscribe((data: Student[]) => {
         this.students = data;
-        console.log(data);
       })
     );
   }

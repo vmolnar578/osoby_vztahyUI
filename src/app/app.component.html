@@ -9,7 +9,7 @@
       <li (click)="selectMenu(menu.OSOBY)"><i class="fas fa-user"></i> Osoby</li>
       <li (click)="selectMenu(menu.PREDMETY)"><i class="fas fa-book-open"></i> Predmety</li>
       <li (click)="selectMenu(menu.OBEDY)"><i class="fas fa-utensils"></i> Obedy</li>
-      <li (click)="selectMenu(menu.LOGIN)"><i class="fas fa-sign-in-alt"></i> Prihlásiť sa</li>
+      <li (click)="selectMenu(menu.LOGIN)"><i class="fas fa-sign-in-alt"></i> {{ getLoginStatus() }}</li>
     </ul>
   </div>
 </div>

@@ -24,7 +24,6 @@ export class UciteliaListComponent implements OnInit {
     this.sub.add(
       this.osobySrv.getTeachers().subscribe((data: Teacher[]) => {
         this.teachers = data;
-        console.log(data);
       })
     );
   }

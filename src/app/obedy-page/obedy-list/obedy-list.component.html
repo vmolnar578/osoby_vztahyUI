@@ -1,4 +1,4 @@
-<div class="flex ml-10 h-full flex-col justify-around">
+<div class="flex ml-10 h-full flex-col justify-around" *ngIf="authService.isUserSignedin()">
   <h2 class="text-3xl font-semibold text-[#1c2b53cc]">
     Pondelok <button (click)="edit(sortedLunches[1])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
   </h2>

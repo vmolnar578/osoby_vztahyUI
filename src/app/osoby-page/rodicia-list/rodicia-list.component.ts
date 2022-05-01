@@ -24,7 +24,6 @@ export class RodiciaListComponent implements OnInit {
     this.sub.add(
       this.osobySrv.getParents().subscribe((data: Parent[]) => {
         this.parents = data;
-        console.log(data);
       })
     );
   }

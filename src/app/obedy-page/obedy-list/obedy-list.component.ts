@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Lunch } from 'src/app/models/lunch.model';
 import { ObedyService } from '../obedy-page.service';
+import { AuthService } from 'src/app/login-page/login-page.service';
 
 @Component({
   selector: 'app-obedy-list',
@@ -14,7 +15,7 @@ export class ObedyListComponent implements OnInit {
   sortedLunches: Lunch[] = [];
   private sub: Subscription = new Subscription();
 
-  constructor(private obedySrv: ObedyService) {}
+  constructor(private obedySrv: ObedyService, public authService: AuthService) {}
   @Output()
   editLunch: EventEmitter<Lunch> = new EventEmitter<Lunch>();
   edit(lunch: Lunch): void {
@@ -24,7 +25,9 @@ export class ObedyListComponent implements OnInit {
     }, 5000);
   }
   ngOnInit(): void {
-    this.refreshLunches();
+    if (this.authService.isUserSignedin()) {
+      this.refreshLunches();
+    }
   }
   refreshLunches(): void {
     this.sub.add(

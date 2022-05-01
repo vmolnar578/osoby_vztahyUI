@@ -23,7 +23,6 @@ export class ZiaciPageComponent implements OnInit {
     this.sub.add(
       this.osobyService.getStudentById(13).subscribe((data: Student) => {
         this.studentShowing = data;
-        console.log(data);
       })
     );
   }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Request } from '../models/request.model';
+import { AuthService } from './login-page.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -6,13 +9,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent implements OnInit {
-  constructor() {}
-
+  /*request: Request[] = [];
   ngOnInit(): void {}
-  login(): void {
-    //TODO
+  constructor(private loginService: LoginService) {}
+
+  login(r: Request): void {
+    this.loginService.updateLunch(r.userName, r.userPassword).subscribe(() => {
+      this.refresh();
+    });
   }
   register(): void {
     //TODO
+  }*/
+
+
+  constructor(private router: Router, private authService: AuthService) {}
+  username: string = '';
+  password : string = '';
+
+  ngOnInit() {
+    if (this.authService.isUserSignedin()) {
+      //this.router.navigateByUrl('osoby');
+    }
+  }
+
+  login() {
+    const request: Request = { userName: this.username, userPassword: this.password};
+    this.authService.signin(request).subscribe((result)=> {
+      this.router.navigateByUrl('osoby');
+    });
+  }
+
+  register() {
+    // TODO
   }
 }
