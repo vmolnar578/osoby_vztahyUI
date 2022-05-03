@@ -19,6 +19,7 @@ export class UciteliaFormComponent implements OnInit {
       phoneNumber: new FormControl(null),
       dateOfBirth: new FormControl(null),
       lunchId: new FormControl(null),
+      image: new FormControl(null),
     });
   }
   @Input()
@@ -40,6 +41,7 @@ export class UciteliaFormComponent implements OnInit {
       phoneNumber: this.teacherForm.value.phoneNumber,
       dateOfBirth: this.teacherForm.value.dateOfBirth,
       lunchId: this.teacherForm.value.lunchId,
+      image: this.teacherForm.value.image,
     });
     this.teacherForm.reset();
   }

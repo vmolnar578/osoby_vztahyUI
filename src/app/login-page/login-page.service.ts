@@ -13,24 +13,6 @@ export class AuthService {
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {}
 
-  /*public signin(request: Request): Observable<any> {
-    let token: string | null;
-    console.log(request.userName + ':' + request.userPassword);
-    const headers = new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'Basic ' + btoa(request.userName +':'+ request.userPassword)
-    });
-
-    this.http.post(this.baseUrl, null, {headers, observe: 'response'}).subscribe(response => {
-      console.log("DEBUG TOKEN: " + response.headers.get('Authorization'));
-      let token: string | null = response.headers.get("Authorization");
-      if (token !== null) {
-        sessionStorage.setItem('token', token);
-      }
-    });
-    return response;
-  }*/
-
   signin(request: Request): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',

@@ -19,6 +19,7 @@ export class ZiaciFormComponent implements OnInit {
       grade: new FormControl(null),
       dateOfBirth: new FormControl(null),
       lunchId: new FormControl(null),
+      image: new FormControl(null),
     });
   }
   @Input()
@@ -40,6 +41,7 @@ export class ZiaciFormComponent implements OnInit {
       grade: this.studentForm.value.grade,
       dateOfBirth: this.studentForm.value.dateOfBirth,
       lunchId: this.studentForm.value.lunchId,
+      image: this.studentForm.value.image,
     });
     this.studentForm.reset();
   }

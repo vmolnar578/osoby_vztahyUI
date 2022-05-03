@@ -6,6 +6,7 @@ export class Student {
   gender: string;
   dateOfBirth: string;
   lunchId: number;
+  image: string;
 
   constructor(student: Student) {
     this.id = student.id;
@@ -15,5 +16,6 @@ export class Student {
     this.gender = student.gender;
     this.grade = student.grade;
     this.lunchId = student.lunchId;
+    this.image = student.image;
   }
 }

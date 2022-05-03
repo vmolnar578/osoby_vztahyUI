@@ -18,6 +18,7 @@ export class RodiciaFormComponent implements OnInit {
       gender: new FormControl(null),
       phoneNumber: new FormControl(null),
       dateOfBirth: new FormControl(null),
+      image: new FormControl(null),
     });
   }
   @Input()
@@ -38,6 +39,7 @@ export class RodiciaFormComponent implements OnInit {
       gender: this.parentForm.value.gender,
       phoneNumber: this.parentForm.value.phoneNumber,
       dateOfBirth: this.parentForm.value.dateOfBirth,
+      image: this.parentForm.value.image,
     });
     this.parentForm.reset();
   }

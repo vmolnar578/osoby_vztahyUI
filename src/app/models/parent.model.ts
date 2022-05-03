@@ -5,6 +5,7 @@ export class Parent {
   dateOfBirth: string;
   gender: string;
   phoneNumber: string;
+  image: string;
 
   constructor(parent: Parent) {
     this.firstName = parent.firstName;
@@ -13,5 +14,6 @@ export class Parent {
     this.id = parent.id;
     this.gender = parent.gender;
     this.phoneNumber = parent.phoneNumber;
+    this.image = parent.image;
   }
 }
