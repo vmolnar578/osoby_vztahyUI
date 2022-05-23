@@ -49,7 +49,7 @@ import { PredmetyFormComponent } from './predmety-page/predmety-form/predmety-fo
     PredmetyListComponent,
     PredmetyFormComponent,
   ],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

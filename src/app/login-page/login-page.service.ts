@@ -51,10 +51,17 @@ export class AuthService {
       alert("Relácia vypršala!\nPrihláste sa znova prosím...");
       return false;
     }
+
+    this.increaseExpirationTime();
     return true;
   }
 
-  setExpirationTime(time: string){
+  increaseExpirationTime() {
+    const expiration: string | null = (Date.now() + 900*1000).toString(); // +900 sek
+    sessionStorage.setItem('expiration', expiration);
+  }
+
+  setExpirationTime(time: string) {
     sessionStorage.setItem('expiration', time);
   }
 
