@@ -19,9 +19,9 @@ export class ZiaciFormComponent implements OnInit {
       grade: new FormControl(null),
       dateOfBirth: new FormControl(null),
       lunchId: new FormControl(null),
-      image: new FormControl(null),
-      parent1Id: new FormControl(null),
-      parent2Id: new FormControl(null),
+      image: new FormControl('https://lirp.cdn-website.com/8e014d2b54624d908fccd15abc8093f0/dms3rep/multi/opt/10856d0-384w.jpg'),
+      parentOneId: new FormControl(null),
+      parentTwoId: new FormControl(null),
       teacherId: new FormControl(null),
     });
   }
@@ -45,8 +45,8 @@ export class ZiaciFormComponent implements OnInit {
       dateOfBirth: this.studentForm.value.dateOfBirth,
       lunchId: this.studentForm.value.lunchId,
       image: this.studentForm.value.image,
-      parent1Id: this.studentForm.value.parent1Id,
-      parent2Id: this.studentForm.value.parent2Id,
+      parentOneId: this.studentForm.value.parentOneId,
+      parentTwoId: this.studentForm.value.parentTwoId,
       teacherId: this.studentForm.value.teacherId,
     });
     this.studentForm.reset();

@@ -21,23 +21,24 @@
           <div>
             <span class="text-[#000000b7] italic">Telefón:</span> <span class="text-2xl ml-1"> {{ person?.phoneNumber }}</span>
           </div>
-          <div>
-            <span class="text-[#000000b7] italic">Dieťa:</span> <span class="text-2xl ml-1"> {{ person?.childId }}</span>
-          </div>
         </div>
         <div class="mr-20 mt-0 sm:mt-10 md:mt-0">
-          <img class="rounded-3xl md:w-72 md:h-72" src="{{ person?.image }}" alt="" />
+          <img class="rounded-3xl md:w-72 md:h-72 object-cover" src="{{ person?.image }}" alt="" />
         </div>
       </div>
-      <!--       <div class="flex flex-col sm:flex-row w-full sm:gap-40 md:gap-80">
+      <div class="flex flex-col sm:flex-row w-full sm:gap-40 md:gap-80">
         <div>
           <div class="flex gap-4 flex-col mt-7">
-            <h2 class="text-2xl text-[#41568bcc] font-bold">Rodičia</h2>
-            <div>
-              <span class="text-[#000000b7] italic">Work in progress</span>
+            <h2 class="text-2xl text-[#41568bcc] font-bold">Deti</h2>
+            <div class="flex gap-10">
+              <img class="w-24 rounded-md" src="{{ student?.image }}" alt="" />
+              <div>
+                <span class="text-[#000000b7] italic"></span> <span class="text-2xl ml-1"> {{ student?.firstName }} {{ student?.lastName }}</span>
+                <span class="ml-4 text-[#000000b7] italic">{{ student?.grade }}. ročník</span>
+              </div>
             </div>
           </div>
-          <div class="flex gap-4 flex-col mt-7">
+          <!--           <div class="flex gap-4 flex-col mt-7">
             <h2 class="text-2xl text-[#41568bcc] font-bold">Predmety</h2>
             <div>
               <span class="text-[#000000b7] italic">Work in progress</span>
@@ -56,9 +57,9 @@
             <div>
               <span class="text-[#000000b7] italic">Work in progress</span>
             </div>
-          </div>
+          </div> -->
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>

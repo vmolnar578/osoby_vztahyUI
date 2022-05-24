@@ -18,7 +18,7 @@ export class RodiciaFormComponent implements OnInit {
       gender: new FormControl(null),
       phoneNumber: new FormControl(null),
       dateOfBirth: new FormControl(null),
-      image: new FormControl(null),
+      image: new FormControl('https://64.media.tumblr.com/db9cf4ca6cefb82ec714fd65980c0071/507251de61c78a3f-7b/s500x750/ddbb9f0a10be3b4620f2b35d603bcf8171e98020.jpg'),
       childId: new FormControl(null),
     });
   }

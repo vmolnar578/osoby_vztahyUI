@@ -31,6 +31,7 @@ export class ZiaciPageComponent implements OnInit {
   refresh(): void {
     this.osobyService.getStudents().subscribe((s) => {
       this.students = s;
+      console.log(this.students);
     });
   }
   pushStudent(s: Student): void {
