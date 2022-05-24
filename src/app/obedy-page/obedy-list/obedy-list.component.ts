@@ -13,6 +13,7 @@ export class ObedyListComponent implements OnInit {
   @Input()
   lunches: Lunch[] = [];
   sortedLunches: Lunch[] = [];
+  role = sessionStorage.getItem('role');
   private sub: Subscription = new Subscription();
 
   constructor(private obedySrv: ObedyService, public authService: AuthService) {}
@@ -27,6 +28,12 @@ export class ObedyListComponent implements OnInit {
   ngOnInit(): void {
     if (this.authService.isUserSignedin()) {
       this.refreshLunches();
+    }
+    if (this.role != 'ROLE_ADMIN' && this.role != 'ROLE_TEACHER') {
+      let buttons = document.querySelectorAll('button');
+      buttons.forEach((b) => {
+        b.style.display = 'none';
+      });
     }
   }
   refreshLunches(): void {

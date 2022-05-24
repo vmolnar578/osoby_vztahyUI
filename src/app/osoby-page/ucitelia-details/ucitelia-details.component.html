@@ -7,6 +7,9 @@
             <h2 class="text-2xl text-[#41568bcc] font-bold">Osobné udaje</h2>
           </div>
           <div>
+            <span class="text-[#000000b7] italic">ID učiteľa:</span> <span class="text-2xl ml-1"> {{ person?.id }}</span>
+          </div>
+          <div>
             <span class="text-[#000000b7] italic">Meno:</span> <span class="text-2xl ml-1"> {{ person?.firstName }} {{ person?.lastName }}</span>
           </div>
           <div>
@@ -23,11 +26,7 @@
           </div>
         </div>
         <div class="mr-20 mt-0 sm:mt-10 md:mt-0">
-          <img
-            class="rounded-3xl md:w-72 md:h-72"
-            src="{{ person?.image }}"
-            alt=""
-          />
+          <img class="rounded-3xl md:w-72 md:h-72" src="{{ person?.image }}" alt="" />
         </div>
       </div>
       <div class="flex flex-col sm:flex-row w-full sm:gap-40 md:gap-80">

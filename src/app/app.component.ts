@@ -17,8 +17,12 @@ export class AppComponent {
   title = 'osoby_vztahyUI';
   menu = MENU;
   constructor(private router: Router, private authService: AuthService) {}
+  role = this.authService.getRole();
   ngOnInit() {
     this.router.navigate(['/osoby']);
+    if (this.role == null) {
+      this.router.navigate(['/login']);
+    }
   }
   public selectMenu(m: MENU) {
     if (m == MENU.OSOBY) {
@@ -34,8 +38,7 @@ export class AppComponent {
       if (this.authService.isUserSignedin()) {
         this.authService.signout();
         this.router.navigate(['/osoby']);
-      }
-      else {
+      } else {
         this.router.navigate(['/login']);
       }
     }
@@ -43,8 +46,8 @@ export class AppComponent {
 
   getLoginStatus() {
     if (this.authService.isUserSignedin()) {
-      return "Odhlásiť sa";
+      return 'Odhlásiť sa';
     }
-    return "Prihlásiť sa";
+    return 'Prihlásiť sa';
   }
 }

@@ -11,6 +11,7 @@ import { OsobyService } from '../osoby-page.service';
 export class ZiaciListComponent implements OnInit {
   @Input()
   students: Student[] = [];
+  role = sessionStorage.getItem('role');
   private sub: Subscription = new Subscription();
 
   constructor(private osobySrv: OsobyService) {}

@@ -10,6 +10,7 @@ import { ObedyService } from './obedy-page.service';
 })
 export class ObedyPageComponent implements OnInit {
   lunches: Lunch[] = [];
+  role = sessionStorage.getItem('role');
   private sub: Subscription = new Subscription();
   toggleForm(): void {
     let form = document.getElementById('form');

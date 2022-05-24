@@ -11,6 +11,7 @@ import { OsobyService } from '../osoby-page.service';
 export class RodiciaListComponent implements OnInit {
   @Input()
   parents: Parent[] = [];
+  role = sessionStorage.getItem('role');
   private sub: Subscription = new Subscription();
 
   constructor(private osobySrv: OsobyService) {}
@@ -33,7 +34,6 @@ export class RodiciaListComponent implements OnInit {
   edit(parent: Parent): void {
     this.editParent.emit(parent);
   }
-
   delete(parent: Parent): void {
     this.deleteParent.emit(parent);
   }

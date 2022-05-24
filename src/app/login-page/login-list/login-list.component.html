@@ -1,0 +1,11 @@
+<div class="bg-slate-300 h-full flex items-center pt-10 flex-col">
+  <h2 class="text-3xl">Zoznam používateľov</h2>
+
+  <div class="text-2xl font-thin" *ngFor="let p of users">
+    {{ p.id }} {{ p.userName }}
+    <!--     <div class="flex gap-3">
+      <button (click)="edit(p)"><i class="text-sm fas fa-pencil-alt"></i></button>
+      <button (click)="delete(p)"><i class="text-sm fas fa-minus"></i></button>
+    </div> -->
+  </div>
+</div>

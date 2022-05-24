@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Parent } from 'src/app/models/parent.model';
-import {formatDate} from "@angular/common";
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-rodicia-form',
@@ -19,6 +19,7 @@ export class RodiciaFormComponent implements OnInit {
       phoneNumber: new FormControl(null),
       dateOfBirth: new FormControl(null),
       image: new FormControl(null),
+      childId: new FormControl(null),
     });
   }
   @Input()
@@ -40,6 +41,7 @@ export class RodiciaFormComponent implements OnInit {
       phoneNumber: this.parentForm.value.phoneNumber,
       dateOfBirth: this.parentForm.value.dateOfBirth,
       image: this.parentForm.value.image,
+      childId: this.parentForm.value.childId,
     });
     this.parentForm.reset();
   }

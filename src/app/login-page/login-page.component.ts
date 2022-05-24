@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Request } from '../models/request.model';
 import { AuthService } from './login-page.service';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-login-page',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent implements OnInit {
+  users: User[] = [];
   /*request: Request[] = [];
   ngOnInit(): void {}
   constructor(private loginService: LoginService) {}
@@ -22,20 +24,25 @@ export class LoginPageComponent implements OnInit {
     //TODO
   }*/
 
-
   constructor(private router: Router, private authService: AuthService) {}
   username: string = '';
-  password : string = '';
+  password: string = '';
 
   ngOnInit() {
     if (this.authService.isUserSignedin()) {
       //this.router.navigateByUrl('osoby');
     }
+    this.refresh();
   }
-
+  refresh(): void {
+    this.authService.getUsers().subscribe((s) => {
+      this.users = s;
+      console.log(this.users);
+    });
+  }
   login() {
-    const request: Request = { userName: this.username, userPassword: this.password};
-    this.authService.signin(request).subscribe((result)=> {
+    const request: Request = { userName: this.username, userPassword: this.password };
+    this.authService.signin(request).subscribe((result) => {
       this.router.navigateByUrl('osoby');
     });
   }

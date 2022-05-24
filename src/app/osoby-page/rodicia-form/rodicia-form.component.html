@@ -4,11 +4,12 @@
       Meno: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="firstName" /><br />
       Priezvisko: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="lastName" /><br />
       Pohlavie: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="gender" /><br />
+      Dieťa: <input placeholder="ID" class="md:p-3 rounded-md mt-4" type="text" formControlName="childId" /><br />
     </div>
     <div class="flex flex-col">
       Tel. číslo: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="phoneNumber" /><br />
       Dátum narodenia: <input class="md:p-3 rounded-md mt-4" type="date" formControlName="dateOfBirth" /><br />
-      Obrázok: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="image" /><br />
+      Obrázok: <input placeholder="URL" class="md:p-3 rounded-md mt-4" type="text" formControlName="image" /><input type="file" /><br />
     </div>
   </div>
   <span class="flex gap-10 justify-center text-white">
@@ -16,3 +17,4 @@
     <button class="bg-slate-500 shadow-[#ffffff1e] shadow-lg p-3 rounded-md" (click)="editParent()">Upraviť rodiča</button>
   </span>
 </form>
+y

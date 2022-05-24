@@ -6,9 +6,9 @@
       <h1 class="hidden lg:block">Evidencia vzťahov a osôb - Základná škola</h1>
     </div>
     <ul class="flex gap-5 md:gap-14 text-lg cursor-pointer">
-      <li (click)="selectMenu(menu.OSOBY)"><i class="fas fa-user"></i> Osoby</li>
-      <li (click)="selectMenu(menu.PREDMETY)"><i class="fas fa-book-open"></i> Predmety</li>
-      <li (click)="selectMenu(menu.OBEDY)"><i class="fas fa-utensils"></i> Obedy</li>
+      <li *ngIf="this.role != null" (click)="selectMenu(menu.OSOBY)"><i class="fas fa-user"></i> Osoby</li>
+      <li *ngIf="this.role != null" (click)="selectMenu(menu.PREDMETY)"><i class="fas fa-book-open"></i> Predmety</li>
+      <li *ngIf="this.role != null" (click)="selectMenu(menu.OBEDY)"><i class="fas fa-utensils"></i> Obedy</li>
       <li (click)="selectMenu(menu.LOGIN)"><i class="fas fa-sign-in-alt"></i> {{ getLoginStatus() }}</li>
     </ul>
   </div>

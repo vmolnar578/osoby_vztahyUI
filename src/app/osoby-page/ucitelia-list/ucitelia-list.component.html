@@ -1,7 +1,7 @@
 <div class="list text-2xl font-thin flex gap-3 cursor-pointer" *ngFor="let t of teachers" (click)="show(t)">
   {{ t.firstName }} {{ t.lastName }}
-  <div class="flex gap-3">
-    <button (click)="edit(t)"><i class="text-sm fas fa-pencil-alt"></i></button>
+  <div class="flex gap-3" *ngIf="this.role == 'ROLE_ADMIN' || this.role == 'ROLE_TEACHER'">
+    <button onclick="toggleForm()" (click)="edit(t)"><i class="text-sm fas fa-pencil-alt"></i></button>
     <button (click)="delete(t)"><i class="text-sm fas fa-minus"></i></button>
   </div>
 </div>

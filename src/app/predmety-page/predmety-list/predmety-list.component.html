@@ -1,1 +1,9 @@
-<p>predmety-list works!</p>
+<div class="list text-2xl font-thin w-full flex justify-center items-center" *ngFor="let s of filteredSubjects">
+  <div class="bg-[#ffffffa4] opacity-90 rounded-md shadow-custom w-full md:w-1/2 h-20 flex gap-3 text-3xl justify-center items-center">
+    {{ s.title }}
+    <div class="flex gap-3">
+      <button (click)="edit(s)"><i class="text-sm fas fa-pencil-alt"></i></button>
+      <button (click)="delete(s)"><i class="text-sm fas fa-minus"></i></button>
+    </div>
+  </div>
+</div>
