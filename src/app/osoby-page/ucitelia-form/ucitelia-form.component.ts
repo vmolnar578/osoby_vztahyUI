@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Teacher } from 'src/app/models/teacher.model';
-import {formatDate} from "@angular/common";
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-ucitelia-form',
@@ -19,6 +19,7 @@ export class UciteliaFormComponent implements OnInit {
       phoneNumber: new FormControl(null),
       dateOfBirth: new FormControl(null),
       lunchId: new FormControl(null),
+      image: new FormControl('https://storage.googleapis.com/thisday-846548948316-wp-data/wp-media/45857786-tolulope-ibukunoluwa.jpg'),
     });
   }
   @Input()
@@ -40,6 +41,7 @@ export class UciteliaFormComponent implements OnInit {
       phoneNumber: this.teacherForm.value.phoneNumber,
       dateOfBirth: this.teacherForm.value.dateOfBirth,
       lunchId: this.teacherForm.value.lunchId,
+      image: this.teacherForm.value.image,
     });
     this.teacherForm.reset();
   }

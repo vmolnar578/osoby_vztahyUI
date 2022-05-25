@@ -9,6 +9,7 @@ import { OsobyService } from '../osoby-page.service';
 })
 export class UciteliaPageComponent implements OnInit {
   teachers: Teacher[] = [];
+  role = sessionStorage.getItem('role');
   toggleForm(): void {
     let form = document.getElementById('form');
     form?.classList.toggle('hidden');

@@ -1,1 +1,13 @@
-<p>predmety-form works!</p>
+<form class="flex flex-col h-full justify-around text-xl" [formGroup]="subjectForm">
+  <div class="flex flex-col gap-0 md:gap-10">
+    <div class="flex flex-col">
+      Názov predmetu: <input class="md:p-3 rounded-md mt-4" type="text" formControlName="title" /><br />
+      Ročník: <input class="md:p-3 rounded-md mt-4" type="number" formControlName="grade" /><br />
+    </div>
+  </div>
+  <span class="flex gap-10 justify-center text-white">
+    <button class="bg-slate-500 shadow-[#ffffff1e] shadow-lg p-3 rounded-md" (click)="addSubject()">Pridať predmet</button>
+    <button class="bg-slate-500 shadow-[#ffffff1e] shadow-lg p-3 rounded-md" (click)="editSubject()">Upraviť predmet</button>
+  </span>
+  <div id="form" class="md:absolute z-50 hidden justify-around items-center bg-[#8d94aa] w-full h-full backdrop-blur-3xl"></div>
+</form>

@@ -6,14 +6,19 @@
     (editTeacher)="editTeacherFromList($event)"
     (deleteTeacher)="deleteTeacherFromList($event)"
   ></app-ucitelia-list>
-  <div class="flex justify-around text-2xl items-center bg-[#b7bbc573] rounded-bl-lg w-full h-16">
+  <div class="flex justify-around text-2xl items-center bg-[#b7bbc573] rounded-bl-lg w-full h-16" *ngIf="this.role == 'ROLE_ADMIN' || this.role == 'ROLE_TEACHER'">
     <button id="add" (click)="toggleForm()"><i class="fas fa-plus"></i> Pridať</button>
   </div>
 </div>
 <div class="relative md:w-[75%] w-full h-full">
   <div id="form" class="md:absolute z-50 hidden justify-around items-center bg-[#8d94aa] w-full h-full backdrop-blur-3xl">
     <div class="w-fit h-full">
-      <app-ucitelia-form [teacher]="teacherEditing" (teacherEmitter)="pushTeacher($event)" (editTeacherEmitter)="updateTeacher($event)"></app-ucitelia-form>
+      <app-ucitelia-form
+        *ngIf="this.role == 'ROLE_ADMIN' || this.role == 'ROLE_TEACHER'"
+        [teacher]="teacherEditing"
+        (teacherEmitter)="pushTeacher($event)"
+        (editTeacherEmitter)="updateTeacher($event)"
+      ></app-ucitelia-form>
     </div>
   </div>
   <div class="h-full w-full">

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './login-page/login-page.service';
 enum MENU {
   OSOBY,
   PREDMETY,
@@ -15,9 +16,13 @@ enum MENU {
 export class AppComponent {
   title = 'osoby_vztahyUI';
   menu = MENU;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
+  role = this.authService.getRole();
   ngOnInit() {
     this.router.navigate(['/osoby']);
+    if (this.role == null) {
+      this.router.navigate(['/login']);
+    }
   }
   public selectMenu(m: MENU) {
     if (m == MENU.OSOBY) {
@@ -30,7 +35,19 @@ export class AppComponent {
       this.router.navigate(['/obedy']);
     }
     if (m == MENU.LOGIN) {
-      this.router.navigate(['/login']);
+      if (this.authService.isUserSignedin()) {
+        this.authService.signout();
+        this.router.navigate(['/osoby']);
+      } else {
+        this.router.navigate(['/login']);
+      }
     }
+  }
+
+  getLoginStatus() {
+    if (this.authService.isUserSignedin()) {
+      return 'Odhlásiť sa';
+    }
+    return 'Prihlásiť sa';
   }
 }

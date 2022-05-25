@@ -9,5 +9,13 @@
   </head>
   <body>
     <app-root></app-root>
+    <script>
+      function toggleForm() {
+        let form = document.getElementById('form');
+        form.classList.toggle('hidden');
+        form.classList.toggle('flex');
+        document.getElementById('add')?.classList.toggle('text-[#0c2970cc]');
+      }
+    </script>
   </body>
 </html>

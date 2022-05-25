@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Parent } from '../models/parent.model';
 import { Student } from '../models/student.model';
 import { Teacher } from '../models/teacher.model';
+import { AuthService } from '../login-page/login-page.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,68 +14,128 @@ export class OsobyService {
   private studentsApiUrl = 'http://localhost:8080/api/students';
   private teachersApiUrl = 'http://localhost:8080/api/teachers';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   // ------ API parents -----
   public createParent(o: Parent): Observable<Parent> {
-    return this.http.post<Parent>(`${this.parentsApiUrl}`, o);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.post<Parent>(`${this.parentsApiUrl}`, o, {headers});
   }
 
   public getParents(): Observable<Parent[]> {
-    return this.http.get<Parent[]>(`${this.parentsApiUrl}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.get<Parent[]>(`${this.parentsApiUrl}`, {headers});
   }
 
   public getParentById(parentId: number): Observable<Parent> {
-    return this.http.get<Parent>(`${this.parentsApiUrl}/${parentId}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.get<Parent>(`${this.parentsApiUrl}/${parentId}`, {headers});
   }
 
   public updateParent(parentId: number, o: Parent): Observable<Parent> {
-    return this.http.put<Parent>(`${this.parentsApiUrl}/${parentId}`, o);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.put<Parent>(`${this.parentsApiUrl}/${parentId}`, o, {headers});
   }
 
   public deleteParent(parentId: number): Observable<void> {
-    return this.http.delete<void>(`${this.parentsApiUrl}/${parentId}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.delete<void>(`${this.parentsApiUrl}/${parentId}`, {headers});
   }
 
   // ------ API students -----
   public createStudent(o: Student): Observable<Student> {
-    return this.http.post<Student>(`${this.studentsApiUrl}`, o);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.post<Student>(`${this.studentsApiUrl}`, o, {headers});
   }
 
   public getStudents(): Observable<Student[]> {
-    return this.http.get<Student[]>(`${this.studentsApiUrl}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.get<Student[]>(`${this.studentsApiUrl}`, {headers});
   }
 
   public getStudentById(studentId: number): Observable<Student> {
-    return this.http.get<Student>(`${this.studentsApiUrl}/${studentId}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.get<Student>(`${this.studentsApiUrl}/${studentId}`, {headers});
   }
 
   public updateStudent(studentId: number, o: Student): Observable<Student> {
-    return this.http.put<Student>(`${this.studentsApiUrl}/${studentId}`, o);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.put<Student>(`${this.studentsApiUrl}/${studentId}`, o, {headers});
   }
 
   public deleteStudent(studentId: number): Observable<void> {
-    return this.http.delete<void>(`${this.studentsApiUrl}/${studentId}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.delete<void>(`${this.studentsApiUrl}/${studentId}`, {headers});
   }
 
   // ------ API teachers -----
   public createTeacher(o: Teacher): Observable<Teacher> {
-    return this.http.post<Teacher>(`${this.teachersApiUrl}`, o);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.post<Teacher>(`${this.teachersApiUrl}`, o, {headers});
   }
 
   public getTeachers(): Observable<Teacher[]> {
-    return this.http.get<Teacher[]>(`${this.teachersApiUrl}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.get<Teacher[]>(`${this.teachersApiUrl}`, {headers});
   }
 
   public getTeacherById(teacherId: number): Observable<Teacher> {
-    return this.http.get<Teacher>(`${this.teachersApiUrl}/${teacherId}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.get<Teacher>(`${this.teachersApiUrl}/${teacherId}`, {headers});
   }
 
   public updateTeacher(teacherId: number, o: Teacher): Observable<Teacher> {
-    return this.http.put<Teacher>(`${this.teachersApiUrl}/${teacherId}`, o);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.put<Teacher>(`${this.teachersApiUrl}/${teacherId}`, o, {headers});
   }
 
   public deleteTeacher(teacherId: number): Observable<void> {
-    return this.http.delete<void>(`${this.teachersApiUrl}/${teacherId}`);
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.authService.getToken()
+    });
+    return this.http.delete<void>(`${this.teachersApiUrl}/${teacherId}`, {headers});
   }
 }

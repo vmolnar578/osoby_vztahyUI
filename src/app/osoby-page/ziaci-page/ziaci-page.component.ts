@@ -11,6 +11,7 @@ import { OsobyService } from '../osoby-page.service';
 export class ZiaciPageComponent implements OnInit {
   students: Student[] = [];
   private sub: Subscription = new Subscription();
+  role = sessionStorage.getItem('role');
   toggleForm(): void {
     let form = document.getElementById('form');
     form?.classList.toggle('hidden');
@@ -23,7 +24,6 @@ export class ZiaciPageComponent implements OnInit {
     this.sub.add(
       this.osobyService.getStudentById(13).subscribe((data: Student) => {
         this.studentShowing = data;
-        console.log(data);
       })
     );
   }
@@ -31,6 +31,7 @@ export class ZiaciPageComponent implements OnInit {
   refresh(): void {
     this.osobyService.getStudents().subscribe((s) => {
       this.students = s;
+      console.log(this.students);
     });
   }
   pushStudent(s: Student): void {

@@ -1,52 +1,66 @@
-<div class="flex ml-10 h-full flex-col justify-around">
-  <h2 class="text-3xl font-semibold text-[#1c2b53cc]">
-    Pondelok <button (click)="edit(sortedLunches[1])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
-  </h2>
-  <div class="flex items-center gap-5">
-    <img class="w-20" src="{{ sortedLunches[1].image }}" alt="" />
-    <p>
-      ID: {{ sortedLunches[1].id }} <br />
-      Názov: {{ sortedLunches[1].mainMeal }}
-    </p>
+<div class="mt-7 flex flex-col md:flex-row md:justify-around">
+  <div class="flex ml-10 h-full flex-col justify-start gap-y-10">
+    <div>
+      <h2 class="text-3xl mb-3 font-semibold text-[#1c2b53cc]">
+        Pondelok <button (click)="edit(sortedLunches[1])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
+      </h2>
+      <div class="flex items-center gap-5">
+        <img class="w-40" src="{{ sortedLunches[1].image }}" alt="" />
+        <p>
+          ID: {{ sortedLunches[1].id }} <br />
+          Názov: {{ sortedLunches[1].mainMeal }}
+        </p>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-3xl mb-3 font-semibold text-[#1c2b53cc]">
+        Utorok <button (click)="edit(sortedLunches[2])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
+      </h2>
+      <div class="flex items-center gap-5">
+        <img class="w-40" src="{{ sortedLunches[2].image }}" alt="" />
+        <p>
+          ID: {{ sortedLunches[2].id }} <br />
+          Názov: {{ sortedLunches[2].mainMeal }}
+        </p>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-3xl mb-3 font-semibold text-[#1c2b53cc]">
+        Streda <button (click)="edit(sortedLunches[3])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
+      </h2>
+      <div class="flex items-center gap-5">
+        <img class="w-40" src="{{ sortedLunches[3].image }}" alt="" />
+        <p>
+          ID: {{ sortedLunches[3].id }} <br />
+          Názov: {{ sortedLunches[3].mainMeal }}
+        </p>
+      </div>
+    </div>
   </div>
-  <h2 class="text-3xl font-semibold text-[#1c2b53cc]">
-    Utorok <button (click)="edit(sortedLunches[2])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
-  </h2>
-  <div class="flex items-center gap-5">
-    <img class="w-20" src="{{ sortedLunches[2].image }}" alt="" />
-    <p>
-      ID: {{ sortedLunches[2].id }} <br />
-      Názov: {{ sortedLunches[2].mainMeal }}
-    </p>
-  </div>
-  <h2 class="text-3xl font-semibold text-[#1c2b53cc]">
-    Streda <button (click)="edit(sortedLunches[3])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
-  </h2>
-  <div class="flex items-center gap-5">
-    <img class="w-20" src="{{ sortedLunches[3].image }}" alt="" />
-    <p>
-      ID: {{ sortedLunches[3].id }} <br />
-      Názov: {{ sortedLunches[3].mainMeal }}
-    </p>
-  </div>
-  <h2 class="text-3xl font-semibold text-[#1c2b53cc]">
-    Štvrtok <button (click)="edit(sortedLunches[4])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
-  </h2>
-  <div class="flex items-center gap-5">
-    <img class="w-20" src="{{ sortedLunches[4].image }}" alt="" />
-    <p>
-      ID: {{ sortedLunches[4].id }} <br />
-      Názov: {{ sortedLunches[4].mainMeal }}
-    </p>
-  </div>
-  <h2 class="text-3xl font-semibold text-[#1c2b53cc]">
-    Piatok <button (click)="edit(sortedLunches[5])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
-  </h2>
-  <div class="flex items-center gap-5">
-    <img class="w-20" src="{{ sortedLunches[5].image }}" alt="" />
-    <p>
-      ID: {{ sortedLunches[5].id }} <br />
-      Názov: {{ sortedLunches[5].mainMeal }}
-    </p>
+  <div class="flex ml-10 mt-10 md:mt-0 md:ml-0 flex-col justify-start gap-y-10">
+    <div>
+      <h2 class="text-3xl mb-3 font-semibold text-[#1c2b53cc]">
+        Štvrtok <button (click)="edit(sortedLunches[4])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
+      </h2>
+      <div class="flex items-center gap-5">
+        <img class="w-40" src="{{ sortedLunches[4].image }}" alt="" />
+        <p>
+          ID: {{ sortedLunches[4].id }} <br />
+          Názov: {{ sortedLunches[4].mainMeal }}
+        </p>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-3xl mb-3 font-semibold text-[#1c2b53cc]">
+        Piatok <button (click)="edit(sortedLunches[5])"><i class="text-lg ml-1 fas fa-pencil-alt"></i></button>
+      </h2>
+      <div class="flex items-center gap-5">
+        <img class="w-40" src="{{ sortedLunches[5].image }}" alt="" />
+        <p>
+          ID: {{ sortedLunches[5].id }} <br />
+          Názov: {{ sortedLunches[5].mainMeal }}
+        </p>
+      </div>
+    </div>
   </div>
 </div>

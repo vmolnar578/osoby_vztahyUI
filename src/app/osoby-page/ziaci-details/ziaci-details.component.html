@@ -7,6 +7,9 @@
             <h2 class="text-2xl text-[#41568bcc] font-bold">Osobné udaje</h2>
           </div>
           <div>
+            <span class="text-[#000000b7] italic">ID žiaka:</span> <span class="text-2xl ml-1"> {{ person?.id }}</span>
+          </div>
+          <div>
             <span class="text-[#000000b7] italic">Meno:</span> <span class="text-2xl ml-1"> {{ person?.firstName }} {{ person?.lastName }}</span>
           </div>
           <div>
@@ -23,11 +26,7 @@
           </div>
         </div>
         <div class="mr-20 mt-0 sm:mt-10 md:mt-0">
-          <img
-            class="rounded-3xl md:w-72"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwbGozsS9QP10p16rZiCrQD0koXVkI4c7LwUHab9dkmFRcN0VqCkB37f2y0EnySItwykg&usqp=CAU"
-            alt=""
-          />
+          <img class="rounded-3xl md:w-72 md:h-72 object-cover" src="{{ person?.image }}" alt="" />
         </div>
       </div>
       <div class="flex flex-col sm:flex-row w-full sm:gap-40 md:gap-80">
@@ -35,29 +34,36 @@
           <div class="flex gap-4 flex-col mt-7">
             <h2 class="text-2xl text-[#41568bcc] font-bold">Rodičia</h2>
             <div>
-              <span class="text-[#000000b7] italic">Work in progress</span>
+              <span class="text-[#000000b7] italic">Matka:</span> <span class="text-2xl ml-1"> {{ parent1?.firstName }} {{ parent1?.lastName }}</span
+              ><br />
+              <span class="text-[#000000b7] italic">Otec:</span><span class="text-2xl ml-1"> {{ parent2?.firstName }} {{ parent2?.lastName }}</span>
             </div>
           </div>
           <div class="flex gap-4 flex-col mt-7">
-            <h2 class="text-2xl text-[#41568bcc] font-bold">Predmety</h2>
+            <h2 class="text-2xl text-[#41568bcc] font-bold">Učitelia</h2>
             <div>
-              <span class="text-[#000000b7] italic">Work in progress</span>
+              <span class="text-[#000000b7] italic">Triedny učiteľ:</span> <span class="text-2xl ml-1"> {{ teacher?.firstName }} {{ teacher?.lastName }}</span>
             </div>
           </div>
         </div>
         <div class="mr-4">
           <div class="flex gap-4 flex-col mt-7">
             <h2 class="text-2xl text-[#41568bcc] font-bold">Obedy</h2>
-            <div>
-              <span class="text-[#000000b7] italic">Work in progress</span>
+            <div class="flex gap-10">
+              <img class="w-24 rounded-md" src="{{ lunch?.image }}" alt="" />
+              <div>
+                <span class="text-[#000000b7] italic">ID:</span> <span class="text-2xl ml-1"> {{ lunch?.id }}</span
+                ><br />
+                <span class="text-[#000000b7] italic">Názov:</span> <span class="text-2xl ml-1"> {{ lunch?.mainMeal }}</span>
+              </div>
             </div>
           </div>
-          <div class="flex gap-4 flex-col mt-7">
+          <!--           <div class="flex gap-4 flex-col mt-7">
             <h2 class="text-2xl text-[#41568bcc] font-bold">Správy</h2>
             <div>
               <span class="text-[#000000b7] italic">Work in progress</span>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

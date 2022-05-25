@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Student } from 'src/app/models/student.model';
-import { formatDate } from '@angular/common'
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-ziaci-form',
@@ -19,6 +19,10 @@ export class ZiaciFormComponent implements OnInit {
       grade: new FormControl(null),
       dateOfBirth: new FormControl(null),
       lunchId: new FormControl(null),
+      image: new FormControl('https://lirp.cdn-website.com/8e014d2b54624d908fccd15abc8093f0/dms3rep/multi/opt/10856d0-384w.jpg'),
+      parentOneId: new FormControl(null),
+      parentTwoId: new FormControl(null),
+      teacherId: new FormControl(null),
     });
   }
   @Input()
@@ -40,6 +44,10 @@ export class ZiaciFormComponent implements OnInit {
       grade: this.studentForm.value.grade,
       dateOfBirth: this.studentForm.value.dateOfBirth,
       lunchId: this.studentForm.value.lunchId,
+      image: this.studentForm.value.image,
+      parentOneId: this.studentForm.value.parentOneId,
+      parentTwoId: this.studentForm.value.parentTwoId,
+      teacherId: this.studentForm.value.teacherId,
     });
     this.studentForm.reset();
   }

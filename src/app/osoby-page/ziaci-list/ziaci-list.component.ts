@@ -11,6 +11,7 @@ import { OsobyService } from '../osoby-page.service';
 export class ZiaciListComponent implements OnInit {
   @Input()
   students: Student[] = [];
+  role = sessionStorage.getItem('role');
   private sub: Subscription = new Subscription();
 
   constructor(private osobySrv: OsobyService) {}
@@ -24,7 +25,6 @@ export class ZiaciListComponent implements OnInit {
     this.sub.add(
       this.osobySrv.getStudents().subscribe((data: Student[]) => {
         this.students = data;
-        console.log(data);
       })
     );
   }

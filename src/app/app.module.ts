@@ -24,6 +24,8 @@ import { ObedyListComponent } from './obedy-page/obedy-list/obedy-list.component
 import { ObedyFormComponent } from './obedy-page/obedy-form/obedy-form.component';
 import { PredmetyListComponent } from './predmety-page/predmety-list/predmety-list.component';
 import { PredmetyFormComponent } from './predmety-page/predmety-form/predmety-form.component';
+import { LoginListComponent } from './login-page/login-list/login-list.component';
+import { LoginFormComponent } from './login-page/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +50,10 @@ import { PredmetyFormComponent } from './predmety-page/predmety-form/predmety-fo
     ObedyFormComponent,
     PredmetyListComponent,
     PredmetyFormComponent,
+    LoginListComponent,
+    LoginFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

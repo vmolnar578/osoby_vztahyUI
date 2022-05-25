@@ -6,6 +6,7 @@ export class Teacher {
   gender: string;
   phoneNumber: string;
   lunchId: number;
+  image: string;
 
   constructor(teacher: Teacher) {
     this.firstName = teacher.firstName;
@@ -15,5 +16,6 @@ export class Teacher {
     this.gender = teacher.gender;
     this.phoneNumber = teacher.phoneNumber;
     this.lunchId = teacher.lunchId;
+    this.image = teacher.image;
   }
 }

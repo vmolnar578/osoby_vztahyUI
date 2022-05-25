@@ -11,6 +11,7 @@ import { Teacher } from 'src/app/models/teacher.model';
 export class UciteliaListComponent implements OnInit {
   @Input()
   teachers: Teacher[] = [];
+  role = sessionStorage.getItem('role');
   private sub: Subscription = new Subscription();
 
   constructor(private osobySrv: OsobyService) {}
@@ -24,7 +25,6 @@ export class UciteliaListComponent implements OnInit {
     this.sub.add(
       this.osobySrv.getTeachers().subscribe((data: Teacher[]) => {
         this.teachers = data;
-        console.log(data);
       })
     );
   }

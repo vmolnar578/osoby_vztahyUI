@@ -1,6 +1,42 @@
-<div class="h-[10%] mb-4 w-full rounded-t-lg bg-[rgba(255,255,255,0.61)] flex justify-center items-center">
+<div class="h-[10%] w-full rounded-t-lg bg-[rgba(255,255,255,0.61)] flex justify-center items-center">
   <h2 class="text-3xl">Rozpis predmetov</h2>
 </div>
-<div class="text-center">
-  <p>Work in progress</p>
+<div class="mb-10 bg-[#5b698dcc] h-[13%] w-full flex justify-center gap-5 items-center">
+  <select class="outline-none text-center text-xl h-14 md:w-1/4 w-auto rounded-lg bg-slate-200" name="subjects" id="subjects" (change)="getGrade()">
+    <option value="0">Vyberte si ročník</option>
+    <optgroup label="1. stupeň">
+      <option value="1">1. ročník</option>
+      <option value="2">2. ročník</option>
+      <option value="3">3. ročník</option>
+      <option value="4">4. ročník</option>
+      <option value="5">5. ročník</option>
+    </optgroup>
+    <optgroup label="2. stupeň">
+      <option value="6">6. ročník</option>
+      <option value="7">7. ročník</option>
+      <option value="8">8. ročník</option>
+      <option value="9">9. ročník</option>
+    </optgroup>
+  </select>
+  <button *ngIf="this.role == 'ROLE_ADMIN' || this.role == 'ROLE_TEACHER'" class="text-gray-700 mr-4 h-14 bg-slate-300 shadow-[#ffffff1e] shadow-lg p-3 rounded-md">Upraviť</button>
+</div>
+<div id="form" class="-mt-10 md:absolute z-50 hidden justify-around items-center bg-[#8d94aa] w-full h-[77%] backdrop-blur-3xl">
+  <div class="w-fit h-full">
+    <app-predmety-form
+      *ngIf="this.role == 'ROLE_ADMIN' || this.role == 'ROLE_TEACHER'"
+      [subject]="subjectEditing"
+      (subjectEmitter)="pushSubject($event)"
+      (editSubjectEmitter)="updateSubject($event)"
+    ></app-predmety-form>
+  </div>
+</div>
+<div class="w-full absolute text-center text-2xl text-[#000000b7]" *ngIf="grade == '0'">Prosím, zvolte si ročník na zobrazenie predmetov.</div>
+<div class="flex justify-center items-center w-full h-[70%]">
+  <app-predmety-list
+    class="w-full h-full"
+    [subjects]="subjects"
+    [grade]="grade"
+    (editSubject)="editSubjectFromList($event)"
+    (deleteSubject)="deleteSubjectFromList($event)"
+  ></app-predmety-list>
 </div>
