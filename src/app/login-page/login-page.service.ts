@@ -4,6 +4,7 @@ import { Observable, tap } from 'rxjs';
 import { Request } from '../models/request.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../models/user.model';
+import {Teacher} from "../models/teacher.model";
 
 @Injectable({
   providedIn: 'root',
@@ -38,7 +39,7 @@ export class AuthService {
   signin(request: Request): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Basic ' + btoa(request.userName + ':' + request.userPassword),
+      Authorization: 'Basic ' + btoa(request.username + ':' + request.passwordHash),
     });
 
     return this.http.post<any>(this.baseUrl, null, { headers, observe: 'response' }).pipe(
@@ -51,6 +52,10 @@ export class AuthService {
         document.location.reload();
       })
     );
+  }
+
+  register(request: Request): Observable<any> {
+    return this.http.post<Request>(`${this.usersUrl}`, request);
   }
 
   signout() {

@@ -1,9 +1,9 @@
 export class Request {
-  userName: string;
-  userPassword: string;
+  username: string;
+  passwordHash: string;
 
   constructor(request: Request) {
-    this.userName = request.userName;
-    this.userPassword = request.userPassword;
+    this.username = request.username;
+    this.passwordHash = request.passwordHash;
   }
 }

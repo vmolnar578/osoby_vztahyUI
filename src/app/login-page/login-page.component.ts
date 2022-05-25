@@ -41,13 +41,17 @@ export class LoginPageComponent implements OnInit {
     });
   }
   login() {
-    const request: Request = { userName: this.username, userPassword: this.password };
+    const request: Request = { username: this.username, passwordHash: this.password };
     this.authService.signin(request).subscribe((result) => {
       this.router.navigateByUrl('osoby');
     });
   }
 
   register() {
-    // TODO
+    const request: Request = { username: this.username, passwordHash: this.password };
+    this.authService.register(request).subscribe(() => {
+      this.refresh();
+      alert("Úspešná registrácia!")
+    });
   }
 }
