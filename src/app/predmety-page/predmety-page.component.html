@@ -18,7 +18,13 @@
       <option value="9">9. ročník</option>
     </optgroup>
   </select>
-  <button *ngIf="this.role == 'ROLE_ADMIN' || this.role == 'ROLE_TEACHER'" class="text-gray-700 mr-4 h-14 bg-slate-300 shadow-[#ffffff1e] shadow-lg p-3 rounded-md">Upraviť</button>
+  <button
+    *ngIf="this.role == 'ROLE_ADMIN' || this.role == 'ROLE_TEACHER'"
+    class="text-gray-700 mr-4 h-14 bg-slate-300 shadow-[#ffffff1e] shadow-lg p-3 rounded-md"
+    onclick="toggleForm()"
+  >
+    Upraviť
+  </button>
 </div>
 <div id="form" class="-mt-10 md:absolute z-50 hidden justify-around items-center bg-[#8d94aa] w-full h-[77%] backdrop-blur-3xl">
   <div class="w-fit h-full">

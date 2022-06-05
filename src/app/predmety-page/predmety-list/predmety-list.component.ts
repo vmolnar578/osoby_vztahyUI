@@ -36,7 +36,7 @@ export class PredmetyListComponent implements OnInit {
         }
       });
       console.log(this.filteredSubjects);
-    }, 1000);
+    }, 300);
   }
   @Output()
   editSubject: EventEmitter<Subject> = new EventEmitter<Subject>();
@@ -51,10 +51,12 @@ export class PredmetyListComponent implements OnInit {
   }
   edit(subject: Subject): void {
     this.editSubject.emit(subject);
+    this.showGrade(this.grade);
   }
 
   delete(subject: Subject): void {
     this.deleteSubject.emit(subject);
+    this.showGrade(this.grade);
   }
   ngOnInit(): void {
     this.refreshSubjects();
